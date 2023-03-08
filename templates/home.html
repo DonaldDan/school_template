@@ -1,0 +1,57 @@
+<!--main.html template inherited-->
+{% extends 'main.html' %}
+
+<!--Start of the firstblock-->
+{% block content  %}
+<style>
+    .homeContainer{
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+    .schoolSection a{
+        text-decoration: none;
+    }
+    .house img{
+        border-radius: 50%;
+
+    }
+</style>
+
+<div class = 'homeContainer'>
+<div class='schoolSection'>
+    <h4> School section</h4>
+    <hr>
+    <div>
+            {%  for school in school_list %}
+            <div>
+                <h2>{{school.id}}  <a href ="{% url 'school' school.id %}" target="_blank">{{school.name}}</a></h2>
+            </div>
+            {% endfor %}
+    </div>
+</div>
+
+<!--middle section-->
+<div class= "house">
+    <img src=static/images/house.jpg>
+</div>
+
+<!--Result section-->
+<div>
+    <h4> Result </h4>
+    <hr>
+    <div>
+
+    </div>
+    <div>
+        <form method = "POST" action="">
+            {% csrf_token %}
+            <button type ="submit" name="submit">submit</button>
+        </form>
+    </div>
+</div>
+
+</div>
+
+
+{% endblock  %}
+<!--End of block-->

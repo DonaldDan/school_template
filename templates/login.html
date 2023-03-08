@@ -1,0 +1,44 @@
+{% extends 'main.html' %}
+
+{% block content  %}
+
+<style>
+    .Loginpage{
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: normal;
+        display: block;
+        line-height: 50px;
+        border: 1px solid blue;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-right: 400px;
+        margin-left: 400px;
+    }
+
+.registration_Head{
+    text-align: center;
+      
+}
+
+</style>
+
+<div class ='Loginpage'>
+    <div>
+        <h2  class='registration_Head'>Login </h2>
+        </div>
+    <form method = "POST" action = "">
+        {% csrf_token %}
+        <label>Username</label>
+        <input type="text" name="username" placeholder="Enter username"/><br>
+
+        <label>password</label>
+        <input type="password" name="password" placeholder="Enter password"/><br>
+
+        <input type ="submit" value="Login"/>
+
+    </form>
+    <p>Haven't signed up yet</p>
+    <a href = "{% url 'register' %}">sign up</a>
+</div>
+
+{% endblock content %}

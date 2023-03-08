@@ -1,0 +1,42 @@
+{% extends 'main.html' %} {% block content %}
+
+<h4>{{school.name}}</h4>
+<hr />
+
+<div>
+  {% for national in nationals %}
+    
+  {% endfor %}
+
+</div>
+
+<!--nationals schools-->
+<div>
+  <div>
+    <form method="POST" action="">
+      {% csrf_token %}
+    <input type="checkbox" value="kisii" />kisii<br>
+    <input type="checkbox" value="Nyambaria" />Nyambaria<br>
+    <input type="checkbox" value="	Pagani School" /> Pagani School<br>
+    <input type="checkbox" value="Friends School Kamsinga" />Friends SchoolKamsinga <br>
+    <input type="checkbox" value="	Shimo La Tewa" /> Shimo La Tewa<br>
+    <input type="checkbox" value="Embakasi Baracks School" />Embakasi Baracks School<br>
+    <input type="checkbox" value="BrookField shool" />BrookField shool<br>
+    <input type="checkbox" value="		Nyabigena Boys" /> 	Nyabigena Boys<br>
+    <input type="checkbox" value="Inchuni School" />Inchuni School <br>
+    <input type="checkbox" value="Bungoma High" />Bungoma High <br>
+    <input type="checkbox" value="	Jacaranda High" />	Jacaranda High<br>
+    <input type="checkbox" value="Mobamba High" />Mobamba High<br>
+    <input type="checkbox" value="		Nyamache HIgh" /> 	Nyamache HIgh<br>
+    <input type="checkbox" value="St. Mary's Nyamangwa" />St. Mary's Nyamangwa<br>
+    <input type="checkbox" value="		Nyakoiba HIgh" />Nyakoiba HIgh<br>
+    <input type="checkbox" value="Borangi SDA" />Borangi SDA<br>
+    <input type="checkbox" value="Sugubo" />Sugubo<br>
+    <input type="checkbox" value="	Naikuru" /> Naikuru<br>
+    <input type="checkbox" value="Gusii Highlights" />Gusii Highlights <br>
+    <input type="checkbox" value="	Isena Mission High" /> Isena Mission High<br>
+  </div>
+    <button type="update" name="update">update</button>
+  </form>
+</div>
+{% endblock %}

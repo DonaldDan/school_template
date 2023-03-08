@@ -1,0 +1,48 @@
+{% extends 'main.html' %}
+
+{% block content  %}
+<style>
+    .registration{
+        color: blue;
+        display: block;
+        font-family: verdana;
+        font-size: 18px;
+    }
+    .registration_Head{
+        text-align: center;
+          
+    }
+    .mainRegistration{
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: normal;
+        display: block;
+        line-height: 30px;
+        border: 1px solid blue;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-right: 400px;
+        margin-left: 400px;
+    }
+</style>
+<div class='mainRegistration'>
+<div>
+<h2  class='registration_Head'>Registration </h2>
+</div>
+
+<div  class='registration'>
+    <form method = "POST" action = "">
+        {% csrf_token %}
+        {% for field in form %}
+            <label for =''>{{field.label}}</label>
+        {{field}}<br>
+        {% endfor %}
+
+        <input type ="submit" value="Register"/>
+    </form>
+        <p>Already signed up yet</p>
+        <a href = "{% url 'login' %}">Login</a>
+    </div>
+</div>
+</div>
+
+{% endblock  %}

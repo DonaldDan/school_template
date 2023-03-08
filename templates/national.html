@@ -1,0 +1,14 @@
+
+{% extends 'main.html' %}
+{% block content %}
+
+<h4></h4>
+<div>
+    <ul>
+        {%  for national in nationals %}
+               <li> {{ national }} </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{%  endblock %}

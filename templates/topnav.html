@@ -1,0 +1,60 @@
+<!--Logo sample with working to home link-->
+<style>
+  .topnav {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    display: flex;
+    flex-wrap: wrap;
+    height: 4em;
+  }
+  .logo a img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      text-decoration: none;
+  }
+
+  .Search {
+    border-radius: 20px;
+    padding: 3px;
+    border-width: thin;
+    border-size: 60px;
+    width: 500px;
+    margin: 30px auto;
+  }
+
+  .logout a {
+    text-decoration: none;
+    
+  }
+</style>
+
+<!--logo section-->
+<div class="logo">
+  <a href="{% url 'home' %}"> <img src=static/images/KNEC.jpg> </a>
+</div>
+
+<!--topnav-->
+<div class="topnav">
+  <!--User logged identified-->
+  <div class="IntroductionName">
+    {% if request.user.is_authenticated %}
+    <p>Hello {{request.user}}</p>
+  </div>
+
+  <!--Filter Search-->
+  <div class="Search">
+    <form method="GET" action="{% url 'home' %}">
+      <input type="text" , name="q" placeholder="Search School..." />
+    </form>
+  </div>
+
+  <!--login & logout control-->
+  <div class="logout">
+    <a href="{% url 'logout' %}">logout</a>
+    {% else %}
+    <a href="{% url 'login' %}">login</a>
+    {% endif %}
+  </div>
+</div>
+<hr />
